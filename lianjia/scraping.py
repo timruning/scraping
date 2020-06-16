@@ -103,3 +103,5 @@ if __name__ == '__main__':
     print("date", date)
     write_csv(path,
               [date, online_house_num, monthTrans, day90Sold, sold_house_num, houseAmount, customerAmount, showAmount])
+
+
