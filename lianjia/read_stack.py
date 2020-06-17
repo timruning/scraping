@@ -7,6 +7,7 @@ import re
 import json
 import csv
 import time
+import random
 
 
 def get_xxxx(lis):
@@ -29,9 +30,9 @@ def read_proxy(path):
     with open(path, "r", encoding="utf-8") as r:
         file = r.read().split("\n")
         file = [[j for j in v.split(" ") if not "".__eq__(j)] for v in file]
-        proxy = [v[1] + ":" + v[2] for v in file]
-        ht = [v[5] for v in file]
-        return dict(zip(ht, proxy))
+        proxy = [[v[5], v[1] + ":" + v[2]] for v in file]
+        x = random.choice(proxy)
+        return {x[0]:x[1]}
 
 
 if __name__ == '__main__':
